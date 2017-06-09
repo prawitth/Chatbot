@@ -1,5 +1,7 @@
 <?php
 $access_token = 'AVfhYVHdIsNnjJJYcAwtwowcjjDZ6dZBYTlhuaqz8K+oBFKYQAbZChUjyi3mQitLF8k9ASoFn6baNpS9qRjK+F3jHZXWK+puyvXKVzUNv/8hR2sP2Go3N70j66TwlqwCYppViLrwh/pfY+mKLROGaQdB04t89/1O/w1cDnyilFU=';
+$proxy = 'velodrome.usefixie.com:80';
+$proxyauth = 'fixie:51vK0qDLySGq4sU';
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -32,6 +34,8 @@ if (!is_null($events['events'])) {
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_PROXY, $proxy);
+			curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
