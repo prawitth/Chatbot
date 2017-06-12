@@ -1,0 +1,17 @@
+<html>
+<head>
+<script src="brython.js"></script>
+</head>
+<body onload="brython()">
+<script type="text/python">
+from browser import document, alert, console
+ 
+def show(ev):
+    alert(document["zone"].value)
+ 
+alert('สวัสดี นี่คือโค้ดที่ทำงานจากภาษาไพทอน :D')
+document['onbutton'].bind('click',show)
+</script>
+<input id="zone"><button id="onbutton">คลิกสิ :D</button>
+</body>
+</html>
