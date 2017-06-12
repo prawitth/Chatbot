@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
 #It's Work
 # Credit URL : https://realpython.com/blog/python/face-detection-in-python-using-a-webcam/
 
